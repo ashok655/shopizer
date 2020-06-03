@@ -258,6 +258,7 @@ public class ShoppingCartTest extends com.salesmanager.test.common.AbstractSales
 	    retrievedCart = shoppingCartService.getByCode(cartCode.toString(), store);
 	    
 	    Assert.assertNull(retrievedCart);
+	    Product refreshed = productService.getByCode("TB12345", en); productService.delete(refreshed);
 	    
 
 
