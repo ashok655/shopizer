@@ -233,6 +233,7 @@ public class ShoppingCartTest extends com.salesmanager.test.common.AbstractSales
 
 	    item.setItemPrice(price.getFinalPrice());
 	    item.setQuantity(1);
+	    Product refreshed = productService.getByCode("TB12345", en); productService.delete(refreshed);
 	    
 	    /** user selects black **/
 	    ShoppingCartAttributeItem attributeItem = new ShoppingCartAttributeItem(item,blackAttribute);
@@ -258,7 +259,6 @@ public class ShoppingCartTest extends com.salesmanager.test.common.AbstractSales
 	    retrievedCart = shoppingCartService.getByCode(cartCode.toString(), store);
 	    
 	    Assert.assertNull(retrievedCart);
-	    Product refreshed = productService.getByCode("TB12345", en); productService.delete(refreshed);
 	    
 
 
